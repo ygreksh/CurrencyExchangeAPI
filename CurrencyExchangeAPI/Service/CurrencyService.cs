@@ -15,15 +15,14 @@ namespace CurrencyExchangeAPI
             CurrencyResponse currencyResponse;
             using (HttpClient client = new HttpClient())
             {
-                //client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(_token);
                 responseMessage = await client.GetAsync($"https://openexchangerates.org/api/latest.json?app_id={_token}");
                 responseMessage.EnsureSuccessStatusCode();
                 string serializedMessage = await responseMessage.Content.ReadAsStringAsync();
                 Console.WriteLine(serializedMessage);
-                //currencyResponse = JsonConvert.DeserializeObject<CurrencyResponse>(serializedMessage);
+                currencyResponse = JsonConvert.DeserializeObject<CurrencyResponse>(serializedMessage);
             }
-            //return currencyResponse;
-            return null;
+            return currencyResponse;
+            //return null;
         } 
     }
 }

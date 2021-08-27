@@ -11,6 +11,10 @@ namespace CurrencyExchangeAPI
             CurrencyService service = new CurrencyService();
             currencyResponse = await service.GetExchangeRate();
             Console.WriteLine(currencyResponse);
+            foreach (var item in currencyResponse.Rates)
+            {
+                Console.WriteLine($"{item.Key} - {item.Value}");
+            }
         }
     }
 }

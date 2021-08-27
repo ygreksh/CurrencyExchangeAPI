@@ -10,6 +10,6 @@ namespace CurrencyExchangeAPI
         public int TimeStamp { get; set; }
         public string Base { get; set; }
         //public IEnumerable<Currency> Rates { get; set; }
-        public Currency[] Rates { get; set; }
+        public Dictionary<string, double> Rates { get; set; }
     }
 }
