@@ -2,7 +2,9 @@
 {
     public class Currency
     {
-        public string Name { get; set; }
-        public double Rate { get; set; }
+        public string ccy { get; set; }
+        public string base_ccy { get; set; }
+        public double buy { get; set; }
+        public double sale { get; set; }
     }
 }
